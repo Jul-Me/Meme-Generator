@@ -1,17 +1,15 @@
 import React from 'react';
+import './Memes.css';
 
 function Memes({ memes }) {
-  console.log(`state`, memes);
   return (
     <div className="memes">
-      {memes.map((meme) => (
-        <img
-          key={meme.id}
-          src={meme.url}
-          alt={meme.name}
-          height={meme.height}
-          width={meme.width}
-        />
+      {memes.map((meme, idx) => (
+        <div
+          key={meme.id + idx}
+          className="image"
+          style={{ backgroundImage: `url(${meme.url})` }}
+        ></div>
       ))}
     </div>
   );
