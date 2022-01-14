@@ -1,5 +1,6 @@
 import { useEffect, useState, useReducer } from 'react';
 import Header from '../Header/Header';
+import Memes from '../Memes/Memes';
 import './App.css';
 
 const initialState = { allMemes: [], displayMemes: [] };
@@ -31,13 +32,10 @@ function App() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(`state`, state.allMemes);
-  }, [state.allMemes]);
-
   return (
     <div className="app">
       <Header />
+      <Memes memes={state.allMemes} />
     </div>
   );
 }
